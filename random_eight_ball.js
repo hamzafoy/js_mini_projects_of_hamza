@@ -35,4 +35,4 @@ switch (randomNumber) {
     break;
 };
 
-console.log(randomEightBall);
+console.log(`${username}, the answer to your question is: ${randomEightBall}`);
