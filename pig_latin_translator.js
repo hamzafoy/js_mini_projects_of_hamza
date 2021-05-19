@@ -9,7 +9,6 @@ for (let i = 0; i < vowels.length; i++) {
     };
     if (pigLatinConversion[0] !== vowels[i] && pigLatinConversion[1] === 'A' || pigLatinConversion[1] === 'E' || pigLatinConversion[1] === 'I' || pigLatinConversion[1] === 'O' || pigLatinConversion[1] === 'U') {
         let convertThree = pigLatinConversion.shift();
-        console.log(convertThree)
         pigLatinConversion.push(convertThree);
         pigLatinConversion.push('A', 'Y');
         break;
@@ -24,4 +23,10 @@ for (let i = 0; i < vowels.length; i++) {
     };
 }
 
-console.log(pigLatinConversion.join(''));
+
+let pigLatin = pigLatinConversion.join('').toLowerCase();
+let capitalPigLatin = pigLatin[0].toUpperCase();
+let regex = /^[a-z]/;
+let finalPigLatin = pigLatin.replace(regex, capitalPigLatin);
+
+console.log(finalPigLatin);
