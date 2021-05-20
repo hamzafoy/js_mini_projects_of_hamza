@@ -91,3 +91,11 @@ let capitalPigLatin = pigLatin[0].toUpperCase();
 let finalPigLatin = pigLatin.replace(regex, capitalPigLatin);
 
 console.log(finalPigLatin);
+
+
+/*--------------------------------------------
+CREDITS FOR PIG LATIN TRANSLATION GOES TO. . .
+//Credit goes to Purdue University for laying
+out the basic understanding of Pig Latin: 
+https://web.ics.purdue.edu/~morelanj/RAO/prepare2.html
+--------------------------------------------*/
