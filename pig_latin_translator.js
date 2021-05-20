@@ -1,7 +1,12 @@
+// The vowels that I test single words & basic sentences against. For Pig Latin, Y would not be considered a vowel (my rules).
 let vowels = ['A', 'E', 'I', 'O', 'U'];
+// The regular expression is used to test for any lowercase letter in the beginning the single word or sentence.
 let regex = /^[a-z]/;
+// The single word input that will be translated & the basic sentence that will also be translated.
 let singleWordInput = 'Flanders'.toUpperCase();
-let sentenceInput = 'Pig Latin is hard to speak'.toUpperCase();
+let sentenceInput = 'Zuli and Pebbles sitting on a ladder'.toUpperCase();
+
+
 let pigLatinSentence = sentenceInput.split(' ');
 let pigLatinSentenceBroken = pigLatinSentence.map(word => {
     let x = [...word];
@@ -33,8 +38,8 @@ let capitalizedSentence = boundPigLatinSentence[0].toUpperCase();
 let renderedPigLatinSentence = boundPigLatinSentence.replace(regex, capitalizedSentence);
 
 
-console.log(pigLatinSentenceBroken);
-console.log(boundPigLatinSentence);
+//console.log(pigLatinSentenceBroken);
+//console.log(boundPigLatinSentence);
 console.log(renderedPigLatinSentence);
 
 
