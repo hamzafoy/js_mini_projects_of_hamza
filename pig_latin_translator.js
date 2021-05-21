@@ -4,7 +4,7 @@ let vowels = ['A', 'E', 'I', 'O', 'U'];
 let regex = /^[a-z]/;
 // The single word input that will be translated & the basic sentence that will also be translated.
 let singleWordInput = 'Flanders'.toUpperCase();
-let sentenceInput = 'Zuli and Pebbles sitting on a ladder'.toUpperCase();
+let sentenceInput = 'My name is Hamza'.toUpperCase();
 
 
 
