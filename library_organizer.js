@@ -40,7 +40,23 @@ class Book extends Media {
     get pages() {
         return this._pages;
     }
-}
+};
+
+
+
+class Movie extends Media {
+    constructor(title, director, runTime, isCheckedOut, ratings) {
+        super(title, isCheckedOut, ratings);
+        this._director = director;
+        this._runTime = runTime;
+    }
+    get director() {
+        return this._director;
+    }
+    get runTime() {
+        return this._runTime;
+    }
+};
 
 
 
@@ -49,4 +65,8 @@ NineteenEightyFour.addRating(8.5);
 NineteenEightyFour.addRating(9);
 NineteenEightyFour.addRating(8.5);
 
-console.log(NineteenEightyFour); // EXPECTED OUTPUT: Book { _title: '1984', _isCheckedOut: false, _ratings[ 8.5, 9, 8.5 ], _author: 'George Orwell', _pages: 328 }
+const DarkKnightRises = new Movie('Dark Knight Rises', 'Christopher Nolan', 164);
+DarkKnightRises.toggleCheckOutStatus();
+
+console.log(NineteenEightyFour); // EXPECTED OUTPUT: Book { _title: '1984', _isCheckedOut: false, _ratings: [ 8.5, 9, 8.5 ], _author: 'George Orwell', _pages: 328 }
+console.log(DarkKnightRises); //EXPECTED OUTPUT: Movie { _title: 'Dark Knight Rises', _isCheckedOut: true, _ratings: [], _director: 'Christopher Nolan', _runTime: 164 }
