@@ -36,7 +36,7 @@ function anagramThree(word1, word2) {
     for(char of flatFirstAgain) {
         //console.log(char)
         const index2 = flatSecond.findIndex(elem => elem === char);
-        //console.log(index);
+        //console.log(index2);
         //Since `.findIndex()` will return -1 if the index is not found, I hid the splicing method behind an if conditional.
         if(index2 !== -1) {
             flatSecond.splice(index2, 1);
@@ -45,7 +45,7 @@ function anagramThree(word1, word2) {
     }
     //console.log(flatSecond.length)
 
-    if(flatFirst.length === flatSecond.length) {
+    if(flatFirst.length === flatSecond.length && flatFirst.length === 0 && flatSecond.length === 0) {
         return true;
     } else {
         return false;
@@ -68,3 +68,6 @@ console.log(anagramThree('rats', 'stars')); //EXPECTED OUTPUT: FALSE
 console.log(anagramThree('hamza', 'zahm')); //EXPECTED OUTPUT: FALSE
 console.log(anagramThree('hamz', 'zahma')); //EXPECTED OUTPUT: FALSE
 console.log(anagramThree('stressed', 'desserts')); //EXPECTED OUTPUT: TRUE
+console.log(anagramThree('hamza', 'zahmahz')) //EXPECTED OUTPUT: FALSE
+console.log(anagramThree('zahmazz', 'hamza')) //EXPECTED OUTPUT: FALSE
+console.log(anagramThree('hamza', 'codex')) //EXPECTED OUTPUT: FALSE
