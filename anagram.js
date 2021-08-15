@@ -71,3 +71,4 @@ console.log(anagramThree('stressed', 'desserts')); //EXPECTED OUTPUT: TRUE
 console.log(anagramThree('hamza', 'zahmahz')) //EXPECTED OUTPUT: FALSE
 console.log(anagramThree('zahmazz', 'hamza')) //EXPECTED OUTPUT: FALSE
 console.log(anagramThree('hamza', 'codex')) //EXPECTED OUTPUT: FALSE
+console.log(anagramThree('saturnal', 'hamza'))
