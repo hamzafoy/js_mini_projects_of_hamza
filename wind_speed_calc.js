@@ -1,3 +1,5 @@
+//This function helps calculate average wind speed given an array of objects containing wind speeds.
+
 const averageWindSpeed = (weatherEntries) => {
     let averageWinds = 0;
     let numOfEntries = 0;
