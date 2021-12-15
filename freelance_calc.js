@@ -24,4 +24,21 @@ blocks to give instructions.
   export function daysInBudget(budget, ratePerHour) {
     return Math.floor(budget / dayRate(ratePerHour));
   }
+
+  /**
+ * Calculates the discounted rate for large projects, rounded up
+ *
+ * @param {number} ratePerHour
+ * @param {number} numDays: number of days the project spans
+ * @param {number} discount: for example 20% written as 0.2
+ * @returns {number} the rounded up discounted rate
+ */
   
+  export function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
+	const dayRate = (ratePerHour*8);
+    const numOfMonths = Math.floor(numDays/22);
+    const remainderOfDays = Math.floor(numDays%22);
+    const discountedPartPrice = ( (dayRate * 22 * numOfMonths) * (1 - discount) );
+    const partPrice = (remainderOfDays*dayRate);
+    return Math.ceil(discountedPartPrice + partPrice);
+}
