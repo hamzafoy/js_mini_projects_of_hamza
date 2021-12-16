@@ -10,7 +10,7 @@ blocks to give instructions.
  * @param {number} ratePerHour
  * @returns {number} the rate per day
  */
- export function dayRate(ratePerHour) {
+ function dayRate(ratePerHour) {
     return (ratePerHour*8);
   }
   
@@ -21,7 +21,7 @@ blocks to give instructions.
    * @param {number} ratePerHour: the rate per hour
    * @returns {number} the number of days
    */
-  export function daysInBudget(budget, ratePerHour) {
+  function daysInBudget(budget, ratePerHour) {
     return Math.floor(budget / dayRate(ratePerHour));
   }
 
@@ -34,7 +34,7 @@ blocks to give instructions.
  * @returns {number} the rounded up discounted rate
  */
   
-  export function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
+  function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
 	const dayRate = (ratePerHour*8);
     const numOfMonths = Math.floor(numDays/22);
     const remainderOfDays = Math.floor(numDays%22);
