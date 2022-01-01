@@ -6,14 +6,25 @@
  *
  */
 
+class hostingPlan {
+    constructor(name, ratePerHour, storageSpace, numOfWebPages) {
+        this.name = name;
+        this.ratePerHour = ratePerHour;
+        this.storageSpace = storageSpace;
+        this.numOfWebPages = numOfWebPages;
+    }
+}
+
+let basicHosting = new hostingPlan('Basic Hosting', 3.99, 100, 5);
+
 const readline = require('readline');
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-rl.question(`What is your name?`, function(name) {
-    console.log(`Hello ${name}, welcome to the Node plan processor!`);
+rl.question(`What is your name? `, function(name) {
+    console.log(`Hello ${name}, please view our basic hosting plan: ${basicHosting.name} with a low price of ${basicHosting.ratePerHour}!`);
     rl.close();
 });
 
