@@ -29,15 +29,16 @@ const rl = readline.createInterface({
 });
 
 rl.question(`What is your name? `, function(name) {
-    rl.question(`${name}, type 'A' to review plan's storage space, type 'B' to calculate estimated costs for plan `, function(option) {
-        switch (option == 'A') {
-            case true:
-            console.log(`You can expect to have ${basicHosting.storageSpace}MB of space with this plan!`);
-            rl.close();
-            case false:
+    rl.question(`${name}, type 'A' to calculate estimated costs with our basic plan, type 'B' to calculate estimated costs with our medium plan `, function(option) {
+        switch (option) {
+            case 'A':
                 rl.question(`How many hours are you estimating your website would cost to develop? `, function(answer) {
-                    //let calculations = (3.99 * answer);
                     console.log(`Expect to pay upwards of ${basicHosting.calculateHourlyRate(answer)} dollars.`);
+                    rl.close();
+                })
+            case 'B':
+                rl.question(`How many hours are you estimating your website would cost to develop? `, function(answer) {
+                    console.log(`Expect to pay upwards of ${mediumHosting.calculateHourlyRate(answer)} dollars.`);
                     rl.close();
                 })
         }
