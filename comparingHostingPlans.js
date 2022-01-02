@@ -20,6 +20,7 @@ class hostingPlan {
 }
 
 let basicHosting = new hostingPlan('Basic Hosting', 3.99, 100, 5);
+let mediumHosting = new hostingPlan('Medium Hosting', 5.79, 200, 10);
 
 const readline = require('readline');
 const rl = readline.createInterface({
