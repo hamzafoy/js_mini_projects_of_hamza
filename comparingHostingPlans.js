@@ -15,7 +15,7 @@ class hostingPlan {
     }
 
     calculateHourlyRate(numOfHours) {
-        return 
+        return (numOfHours * this.ratePerHour);
     }
 }
 
@@ -35,8 +35,8 @@ rl.question(`What is your name? `, function(name) {
             rl.close();
             case false:
                 rl.question(`How many hours are you estimating your website would cost to develop? `, function(answer) {
-                    let calculations = (3.99 * answer);
-                    console.log(`Expect to pay upwards of ${calculations} dollars.`);
+                    //let calculations = (3.99 * answer);
+                    console.log(`Expect to pay upwards of ${basicHosting.calculateHourlyRate(answer)} dollars.`);
                     rl.close();
                 })
         }
