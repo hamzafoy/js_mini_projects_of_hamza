@@ -28,7 +28,7 @@ const rl = readline.createInterface({
 });
 
 rl.question(`What is your name? `, function(name) {
-    rl.question(`Type 'A' to review plan's storage space, type 'B' to calculate estimated costs for plan`, function(option) {
+    rl.question(`${name}, type 'A' to review plan's storage space, type 'B' to calculate estimated costs for plan `, function(option) {
         switch (option == 'A') {
             case true:
             console.log(`You can expect to have ${basicHosting.storageSpace}MB of space with this plan!`);
