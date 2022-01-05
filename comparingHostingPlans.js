@@ -34,7 +34,7 @@ rl.question(`What is your name? `, function(name) {
         switch (option) {
             case 'A':
                 rl.question(`How many hours are you estimating your website would cost to develop? `, function(answer) {
-                    console.log(`Expect to pay upwards of ${basicHosting.calculateHourlyRate(answer)} dollars.`);
+                    console.log(`Expect to pay upwards of ${basicHosting.calculateHourlyRate(answer)} dollars. This plan is ${(basicHosting.calculateHourlyRate(answer) < mediumHosting.calculateHourlyRate(answer)) ? `cheaper` : `costlier`} than other plans!`);
                     rl.close();
                 })
             case 'B':
