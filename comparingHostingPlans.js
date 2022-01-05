@@ -21,6 +21,7 @@ class hostingPlan {
 
 let basicHosting = new hostingPlan('Basic Hosting', 3.99, 100, 5);
 let mediumHosting = new hostingPlan('Medium Hosting', 5.79, 200, 10);
+let advancedHosting = new hostingPlan('Advanced Hosting', 7.29, 350, 25);
 
 const readline = require('readline');
 const rl = readline.createInterface({
@@ -29,7 +30,7 @@ const rl = readline.createInterface({
 });
 
 rl.question(`What is your name? `, function(name) {
-    rl.question(`${name}, type 'A' to calculate estimated costs with our basic plan, type 'B' to calculate estimated costs with our medium plan `, function(option) {
+    rl.question(`${name}, type 'A' to calculate estimated costs with our basic plan, type 'B' to calculate estimated costs with our medium plan, or type 'C' to calculate estimated costs with our advanced plan `, function(option) {
         switch (option) {
             case 'A':
                 rl.question(`How many hours are you estimating your website would cost to develop? `, function(answer) {
@@ -41,7 +42,12 @@ rl.question(`What is your name? `, function(name) {
                     console.log(`Expect to pay upwards of ${mediumHosting.calculateHourlyRate(answer)} dollars.`);
                     rl.close();
                 })
-        }
+            case 'C':
+                rl.question(`How many hours are you estimating your website would cost to develop? `, function(answer) {
+                    console.log(`Expect to pay upwards of ${advancedHosting.calculateHourlyRate(answer)} dollars.`);
+                    rl.close();
+                })
+    }
     })
     //console.log(`Hello ${name}, please view our basic hosting plan: ${basicHosting.name} with a low price of ${basicHosting.ratePerHour}!`);
 });
